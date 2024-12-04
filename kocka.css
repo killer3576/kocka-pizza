@@ -1,0 +1,23 @@
+html,
+body {
+  font-size: 16px;
+  font-family: Comic Sans MS;
+}
+
+div .q-page {
+  font-size: 1rem !important;
+}
+
+svg {
+  border: 2px solid black;
+  max-width: 320px;
+}
+
+h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.round-1 {
+  border-radius: 1rem;
+}
