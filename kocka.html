@@ -1,128 +1,75 @@
-<!DOCTYPE html>
-<html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kostkovač 3000</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/quasar@2.16.5/dist/quasar.prod.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="kocka.css" rel="stylesheet" type="text/css" />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+const app = Vue.createApp({
+  data: function () {
+    return {
+      // variables
+      random: 0,
+    };
+  },
+  methods: {
+    // functions
+    getRanNum: function () {
+      var min = 1;
+      var max = 7;
+      this.random = Math.floor(Math.random() * (max - min) + min);
+    },
+  },
+  computed: {
+    // "auto" functions/variables
+    getFillA: function () {
+      if (this.random === 1 || this.random === 3 || this.random === 5) {
+        return "black";
+      } else {
+        return "white";
+      }
+    },
 
-    <link rel="manifest" href="manifest.json" />
-  </head>
-  <body>
-    <div id="app">
-      <q-layout view="hHh lpR fFf">
-        <q-header elevated class="bg-black text-white">
-          <q-toolbar>
-            <q-toolbar-title class="text-center"
-              >kostkovač 3000</q-toolbar-title
-            >
-          </q-toolbar>
-        </q-header>
+    getFillB: function () {
+      if (this.random === 1) {
+        return "white";
+      } else {
+        return "black";
+      }
+    },
 
-        <q-page-container>
-          <q-page class="q-pa-md">
-            <!-- HTML -->
-            <div class="text-center">
-              <h3>vaše číslo je</h3>
-              <h3>{{random}}</h3>
+    getFillC: function () {
+      if (this.random === 6) {
+        return "black";
+      } else {
+        return "white";
+      }
+    },
 
-              <svg viewBox="0 0 300 300" class="q-my-md">
-                <!-- centered circle-->
-                <circle
-                  cx="150"
-                  cy="150"
-                  r="30"
-                  stroke=""
-                  :fill="getFillA"
-                ></circle>
-                <circle
-                  cx="55"
-                  cy="55"
-                  r="30"
-                  stroke=""
-                  :fill="getFillB"
-                ></circle>
-                <circle
-                  cx="55"
-                  cy="150"
-                  r="30"
-                  stroke=""
-                  :fill="getFillC"
-                ></circle>
-                <circle
-                  cx="55"
-                  cy="245"
-                  r="30"
-                  stroke=""
-                  :fill="getFillD"
-                ></circle>
-                <circle
-                  cx="245"
-                  cy="55"
-                  r="30"
-                  stroke=""
-                  :fill="getFillE"
-                ></circle>
-                <circle
-                  cx="245"
-                  cy="150"
-                  r="30"
-                  stroke=""
-                  :fill="getFillF"
-                ></circle>
-                <circle
-                  cx="245"
-                  cy="245"
-                  r="30"
-                  stroke=""
-                  :fill="getFillG"
-                ></circle>
-              </svg>
+    getFillD: function () {
+      if (this.random === 4 || this.random === 5 || this.random === 6) {
+        return "black";
+      } else {
+        return "white";
+      }
+    },
+    getFillE: function () {
+      if (this.random === 4 || this.random === 5 || this.random === 6) {
+        return "black";
+      } else {
+        return "white";
+      }
+    },
+    getFillF: function () {
+      if (this.random === 6) {
+        return "black";
+      } else {
+        return "white";
+      }
+    },
+    getFillG: function () {
+      if (this.random != 1) {
+        return "black";
+      } else {
+        return "white";
+      }
+    },
+  },
+  mounted: function () {},
+});
 
-              <div>
-                <q-btn
-                  label="Roztoč to!"
-                  class="text-white bg-green round-1"
-                  @click="getRanNum"
-                >
-                </q-btn>
-              </div>
-            </div>
-            <div>
-              <img
-                class="rollingDiceGif"
-                height="100vw"
-                src="https://media1.tenor.com/m/GS3glUNc6-YAAAAd/dice.gif"
-              />
-            </div>
-          </q-page>
-        </q-page-container>
-
-        <q-footer elevated class="bg-black text-white">
-          <q-toolbar>
-            <q-toolbar-title class="text-center"
-              >(c) 2024, svaca</q-toolbar-title
-            >
-          </q-toolbar>
-        </q-footer>
-      </q-layout>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.4.31/dist/vue.global.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar@2.16.5/dist/quasar.umd.js"></script>
-
-    <script src="app.js"></script>
-
-  </body>
-</html>
+app.use(Quasar);
+app.mount("#app");
