@@ -1,11 +1,11 @@
 {
-  "name": "Barvomat 3000",
-  "short_name": "Barvomat",
+  "name": "Kostkovač 3000",
+  "short_name": "Kostik",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "Aplikace pro míchání barev a jejich vizualizaci.",
+  "description": "Aplikace pro míchání kostek",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
